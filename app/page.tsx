@@ -102,7 +102,7 @@ export default function Home() {
     <div className="flex flex-col flex-1 font-sans" style={{ background: "#080d1f" }}>
 
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 lg:py-0" style={DARK_BG}>
+      <section className="relative w-full overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2 lg:py-0" style={DARK_BG}>
 
         {/* Background glow & particles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -169,6 +169,98 @@ export default function Home() {
               className="border border-white/25 hover:border-[#FF6012]/60 bg-white/5 hover:bg-[#FF6012]/10 text-white px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
               View Our Work
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 1b. ABOUT THE ENGINEER ═══════════════════════════════════════════ */}
+      <section className="w-full bg-[#ffffff] py-5 sm:py-10 px-6 sm:px-10 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Top heading */}
+          <div className="mb-14 sm:mb-20">
+            <p className="text-3xl sm:text-4xl lg:text-5xl text-[#888] font-light leading-tight tracking-tight">
+              A modern engineer&rsquo;s approach
+            </p>
+            <p className="text-3xl sm:text-4xl lg:text-5xl text-[#111] font-black leading-tight tracking-tight mt-1">
+              to building great apps.
+            </p>
+          </div>
+
+          {/* Two-column layout */}
+          <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start">
+
+            {/* Left — photo card */}
+            <div className="lg:w-5/12 flex-shrink-0">
+              <div className="relative">
+
+                {/* Floating badge */}
+                <div className="absolute -top-3 left-6 z-10 bg-white border border-[#111] text-[#111] text-[11px] font-semibold px-3 py-1.5 tracking-wide shadow-sm">
+                  beyond tellerrand
+                </div>
+
+                {/* Photo frame */}
+                <div className="relative border-2 border-[#111] overflow-hidden"
+                  style={{ filter: "grayscale(100%) contrast(1.05)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/engineer_portrait.jpeg"
+                    alt="Junald Jamel — Software Engineer"
+                    className="w-full object-cover object-top"
+                    style={{ aspectRatio: "4/4.5", minHeight: 320 }}
+                  />
+
+                  {/* Social icon row — bottom-right overlay */}
+                  <div className="absolute bottom-3 right-3 flex gap-2">
+                    {[
+                      /* YouTube */
+                      <svg key="yt" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>,
+                      /* Instagram */
+                      <svg key="ig" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.7 1.7 4.8 4.8.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.8c-.2 3.2-1.6 4.7-4.8 4.8-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.2-.2-4.7-1.6-4.8-4.8C2.2 15.6 2.2 15.3 2.2 12s0-3.6.1-4.8C2.5 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.4 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.4 0 8.7 0 12s0 3.6.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.4 24 8.7 24 12 24s3.6 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.3.1-1.6.1-4.9s0-3.6-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.6 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>,
+                      /* LinkedIn */
+                      <svg key="li" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.2 2.4 4.2 5.4v6.3zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13H3.5V9h3.6v11.4zM22.2 0H1.8A1.8 1.8 0 0 0 0 1.8v20.4A1.8 1.8 0 0 0 1.8 24h20.4A1.8 1.8 0 0 0 24 22.2V1.8A1.8 1.8 0 0 0 22.2 0z"/></svg>,
+                    ].map((icon, idx) => (
+                      <button
+                        key={idx}
+                        className="w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition-colors"
+                      >
+                        {icon}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Caption below photo */}
+                <div className="mt-4">
+                  <p className="font-bold text-[#111] text-sm">Junald Jamel</p>
+                  <p className="text-gray-500 text-xs mt-0.5 flex items-center gap-2">
+                    Software Engineer
+                    <span className="text-gray-400">→</span>
+                    building mobile apps
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — bio copy */}
+            <div className="lg:w-7/12 pt-2">
+              <p className="text-[#111] font-bold text-sm sm:text-base leading-relaxed mb-4">
+                I wrote my first line of code over half a decade ago — and never looked back.
+              </p>
+              <p className="text-[#444] text-sm sm:text-base leading-relaxed mb-5">
+                What started as tinkering with apps grew into a passion for building mobile experiences
+                people love. I now develop for iOS, Android, and cross-platform, using the best tools to
+                deliver high-quality apps.
+              </p>
+              <p className="text-[#111] font-bold text-sm sm:text-base leading-relaxed mb-4">
+                Good work is quiet. Bad work is loud.
+              </p>
+              <p className="text-[#444] text-sm sm:text-base leading-relaxed">
+                If it draws attention for the wrong reasons, it&rsquo;s unfinished. I refine until it simply
+                works, letting the experience speak for itself.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
