@@ -102,7 +102,7 @@ export default function Home() {
     <div className="flex flex-col flex-1 font-sans" style={{ background: "#080d1f" }}>
 
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2 lg:py-0" style={DARK_BG}>
+      <section className="relative w-full overflow-hidden min-h-[90dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 lg:py-20" style={DARK_BG}>
 
         {/* Background glow & particles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -174,11 +174,11 @@ export default function Home() {
       </section>
 
       {/* ══ 1b. ABOUT THE ENGINEER ═══════════════════════════════════════════ */}
-      <section className="w-full bg-[#ffffff] py-5 sm:py-10 px-6 sm:px-10 lg:px-16">
+      <section className="w-full bg-[#ffffff] py-8 sm:py-12 px-6 sm:px-10 lg:px-16">
         <div className="max-w-6xl mx-auto">
 
           {/* Top heading */}
-          <div className="mb-14 sm:mb-20">
+          <div className="mb-8 sm:mb-12">
             <p className="text-3xl sm:text-4xl lg:text-5xl text-[#888] font-light leading-tight tracking-tight">
               A modern engineer&rsquo;s approach
             </p>
@@ -188,10 +188,10 @@ export default function Home() {
           </div>
 
           {/* Two-column layout */}
-          <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
 
             {/* Left — photo card */}
-            <div className="lg:w-5/12 flex-shrink-0">
+            <div className="w-full max-w-[280px] sm:max-w-[300px] lg:w-1/3 flex-shrink-0 mx-auto lg:mx-0">
               <div className="relative">
 
                 {/* Floating badge */}
@@ -200,14 +200,14 @@ export default function Home() {
                 </div>
 
                 {/* Photo frame */}
-                <div className="relative border-2 border-[#111] overflow-hidden"
+                <div className="relative border-2 border-[#111] overflow-hidden rounded-md"
                   style={{ filter: "grayscale(100%) contrast(1.05)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/engineer_portrait.jpeg"
                     alt="Junald Jamel — Software Engineer"
                     className="w-full object-cover object-top"
-                    style={{ aspectRatio: "4/4.5", minHeight: 320 }}
+                    style={{ aspectRatio: "4/4.5" }}
                   />
 
                   {/* Social icon row — bottom-right overlay */}
@@ -243,7 +243,7 @@ export default function Home() {
             </div>
 
             {/* Right — bio copy */}
-            <div className="lg:w-7/12 pt-2">
+            <div className="lg:w-2/3 pt-2">
               <p className="text-[#111] font-bold text-sm sm:text-base leading-relaxed mb-4">
                 I wrote my first line of code over half a decade ago — and never looked back.
               </p>
@@ -266,9 +266,9 @@ export default function Home() {
       </section>
 
       {/* ══ 2. TOGETHER / WHY US ═════════════════════════════════════════════ */}
-      <section className="w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
 
             {/* Left copy */}
             <div className="lg:w-1/2">
@@ -334,35 +334,48 @@ export default function Home() {
       </section>
 
       {/* ══ 3. REVIEWS THAT BUILD TRUST ══════════════════════════════════════ */}
-      <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Testimonials</span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase leading-tight">
               Reviews That{" "}
               <span style={{ WebkitTextStroke: "2px #FF6012", color: "transparent" }}>Build Trust!</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {REVIEWS.map((r, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 hover:border-[#FF6012]/40 rounded-2xl p-5 transition-all duration-200 flex flex-col">
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(r.stars)].map((_, j) => (
-                    <svg key={j} className="w-4 h-4 text-[#FF6012]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-4 flex-1">"{r.text}"</p>
-                <div className="flex items-center gap-3 pt-3 border-t border-white/10">
-                  <div className="w-8 h-8 rounded-full bg-[#FF6012] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    {r.name[0]}
+          <style>{`
+            @keyframes marquee {
+              from { transform: translateX(0); }
+              to { transform: translateX(calc(-100% - 1.25rem)); }
+            }
+            .animate-marquee {
+              animation: marquee 20s linear infinite;
+            }
+          `}</style>
+          <div className="flex overflow-hidden w-full pb-4 gap-5 group">
+            {[...Array(3)].map((_, arrayIndex) => (
+              <div key={arrayIndex} className="flex gap-5 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+                {REVIEWS.map((r, i) => (
+                  <div key={i} className="w-[260px] sm:w-[300px] shrink-0 bg-white/5 border border-white/10 hover:border-[#FF6012]/40 rounded-2xl p-5 transition-all duration-200 flex flex-col">
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(r.stars)].map((_, j) => (
+                        <svg key={j} className="w-4 h-4 text-[#FF6012]" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-4 flex-1">"{r.text}"</p>
+                    <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+                      <div className="w-8 h-8 rounded-full bg-[#FF6012] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                        {r.name[0]}
+                      </div>
+                      <div>
+                        <p className="text-white text-xs font-semibold">{r.name}</p>
+                        <p className="text-white/40 text-[10px]">{r.company}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-white text-xs font-semibold">{r.name}</p>
-                    <p className="text-white/40 text-[10px]">{r.company}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             ))}
           </div>
@@ -370,9 +383,9 @@ export default function Home() {
       </section>
 
       {/* ══ 4. BUILT FOR EVERY INDUSTRY ══════════════════════════════════════ */}
-      <section className="w-full bg-[#f8f9ff] py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f8f9ff] py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Industries We Serve</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#080d1f] uppercase leading-tight">
               Built For Every{" "}
@@ -407,9 +420,9 @@ export default function Home() {
       </section>
 
       {/* ══ 5. OUR PROCESS ═══════════════════════════════════════════════════ */}
-      <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">How We Work</span>
             <h2 className="text-4xl sm:text-5xl font-black text-white uppercase">
               Our{" "}
@@ -429,9 +442,9 @@ export default function Home() {
       </section>
 
       {/* ══ 6. FEATURED IN ═══════════════════════════════════════════════════ */}
-      <section className="w-full bg-white py-12 sm:py-14 px-4 sm:px-6 lg:px-8">
+      {/* <section className="w-full bg-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-8">Featured In</p>
+          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6 sm:mb-8">Featured In</p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10 items-center">
             {PRESS.map((name, i) => (
               <span key={i} className="text-lg sm:text-xl font-black text-gray-300 hover:text-[#FF6012] transition-colors duration-200 cursor-default">
@@ -440,12 +453,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ 7. MEET THE TEAM ═════════════════════════════════════════════════ */}
-      <section className="w-full bg-[#f8f9ff] py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      {/* <section className="w-full bg-[#f8f9ff] py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Our People</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#080d1f] uppercase">
               Meet The{" "}
@@ -466,8 +479,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {/* Team stats */}
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-5">
+         
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-5">
             {[
               { value: "320+", label: "Total Team Size" },
               { value: "10+",  label: "Years Together" },
@@ -481,12 +494,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ 8. OUR IMPACT IN NUMBERS ═════════════════════════════════════════ */}
-      <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Numbers Don't Lie</span>
             <h2 className="text-4xl sm:text-5xl font-black text-white uppercase">
               Our Impact{" "}
@@ -505,9 +518,9 @@ export default function Home() {
       </section>
 
       {/* ══ 9. WHAT OUR CLIENTS SAY ══════════════════════════════════════════ */}
-      <section className="w-full bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      {/* <section className="w-full bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Client Love</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#080d1f] uppercase">
               What Our{" "}
@@ -538,12 +551,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ 10. AWARDS & RECOGNITION ═════════════════════════════════════════ */}
-      <section className="w-full bg-[#f8f9ff] py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f8f9ff] py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Our Achievements</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#080d1f] uppercase">
               Awards &{" "}
@@ -562,7 +575,7 @@ export default function Home() {
       </section>
 
       {/* ══ 11. HAVE A PROJECT IN MIND (CTA) ═════════════════════════════════ */}
-      <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8" style={DARK_BG}>
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">Let's Build Together</span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase leading-tight mb-4">
@@ -587,9 +600,9 @@ export default function Home() {
       </section>
 
       {/* ══ 12. CARRYING CREDIBILITY / TECH STACK ════════════════════════════ */}
-      <section className="w-full bg-white py-12 sm:py-14 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-8">
+          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6 sm:mb-8">
             Carrying Credibility — Trusted By 1000+ Businesses Worldwide
           </p>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 items-center">
@@ -600,7 +613,7 @@ export default function Home() {
             ))}
           </div>
           {/* Press logos row */}
-          <div className="mt-8 pt-8 border-t border-gray-100 flex flex-wrap justify-center gap-6 sm:gap-10 items-center">
+          <div className="mt-6 pt-6 sm:mt-8 sm:pt-8 border-t border-gray-100 flex flex-wrap justify-center gap-6 sm:gap-10 items-center">
             {PRESS.map((name, i) => (
               <span key={i} className="text-base sm:text-lg font-black text-gray-300 hover:text-[#FF6012] transition-colors duration-200 cursor-default">
                 {name}
@@ -622,9 +635,9 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={{ background: "linear-gradient(135deg, #080d1f 0%, #0d1535 100%)" }}>
+    <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8" style={{ background: "linear-gradient(135deg, #080d1f 0%, #0d1535 100%)" }}>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-10">
           <span className="text-[#FF6012] text-xs font-bold uppercase tracking-widest mb-3 block">FAQ</span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase leading-tight">
             Questions?{" "}
